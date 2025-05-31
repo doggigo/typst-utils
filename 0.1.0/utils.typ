@@ -25,13 +25,6 @@
   ])
 }
 
-#let make-summary(body) = {
-  let h1s = ()
-  let h2s = ()
-  heading.with()
-}
-
-
 
 #let blocky-text(body, leading: 0.8em) = airy-text(body, leading: leading)
 #let blocky-paragraph(body, leading: 0.8em, spacing: 0.8em) ={
