@@ -28,14 +28,18 @@
 
 #let blocky-text(body, leading: 0.8em) = airy-text(body, leading: leading)
 #let blocky-paragraph(body, leading: 0.8em, spacing: 0.8em) ={
+  set list(marker: [#sym.ast.op])
   airy-paragraph(body, leading: leading, spacing: spacing)
 }
+
 #let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
 #let operp = math.op($#image("perp.svg",width: .75em)$)
 #let bigosum = $plus.circle.big$
 #let osum = $plus.circle$
 #let Sup = math.op($"Sup"$, limits: true)
 #let Inf = math.op($"Inf"$, limits: true)
+#let Max = math.op($"Max"$, limits: true)
+#let Min = math.op($"Min"$, limits: true)
 #let smallo = math.op($"o"$, limits: true)
 #let bigo = math.op($cal(O)$, limits: true)
 #let ch = math.op($"ch"$)
