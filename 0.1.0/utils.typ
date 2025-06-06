@@ -56,8 +56,14 @@
 #let vdots = math.dots.v
 #let transp(x) = $attach(#x, tl: t)$
 
+#let serif(body) = {
+  set text(font: "New Computer Modern", style: "normal")
+  body
+}
+
 #let context-block(body) = {
   set list(marker: [#sym.ast.op])
+  set text(font: "New Computer Modern Sans", style: "italic")
   rect(
     stroke: (left: 0.5pt + black),
     width: 90%,
