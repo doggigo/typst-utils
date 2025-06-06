@@ -64,8 +64,13 @@
 #let context-block(body) = {
   set list(marker: [#sym.ast.op])
   set text(font: "New Computer Modern Sans", style: "italic")
+  if (context text.font) != "new computer modern sans" {
+    set text(font: "New Computer Modern", style: "normal")
+    }
   rect(
     stroke: (left: 0.5pt + black),
     width: 90%,
-  )[#align(left, body)]
+  )[
+    
+    #align(left, body)]
 }
