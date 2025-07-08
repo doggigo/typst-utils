@@ -51,6 +51,7 @@
 #let Cov = math.op($"Cov"$)
 #let Esp = math.op($sans(E)$)
 #let Var = math.op($sans(V)$)
+#let Card = math.op($"Card"$)
 #let bigosum = sym.plus.circle.big
 #let scal(x,y) = $(#x thin mid(|) thin #y)$
 #let vdots = math.dots.v
@@ -61,16 +62,20 @@
   body
 }
 
-#let context-block(body) = {
+#let context-block(body, margin-top: 0em) = {
+  let pad = 15pt;
   set list(marker: [#sym.ast.op])
   set text(font: "New Computer Modern Sans", style: "italic")
   if (context text.font) != "new computer modern sans" {
     set text(font: "New Computer Modern", style: "normal")
-    }
-  rect(
+  }
+  block(above: margin-top)[
+    #rect(
     stroke: (left: 0.5pt + black),
     width: 90%,
-  )[
-    
-    #align(left, body)]
+    inset: (left: pad)
+    )[
+    #align(left, [#body])
+    ]
+  ]
 }
