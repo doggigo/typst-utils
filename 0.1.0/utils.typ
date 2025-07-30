@@ -1,11 +1,28 @@
-#let application(..elements, display: false) = {
-  $cases(
+#let application(..elements, displaymode: false) = {
+  if displaymode {
+    $display(cases(
     delim: "|",
     #elements.at(0) &-> &#elements.at(1),
-    #if display {
-      for i in range(2, elements.pos().len(), step: 2) { $\display(#elements.at(i) & |-> & #elements.at(i + 1))$ }
+    #if displaymode {
+      for i in range(2, elements.pos().len(), step: 2) { $(#elements.at(i) & |-> & #elements.at(i + 1))$ }
     } else { for i in range(2, elements.pos().len(), step: 2) { $#elements.at(i) & |-> & #elements.at(i + 1)$ } }
-  )$
+  ))$
+  } else {
+    $cases(
+    delim: "|",
+    #elements.at(0) &-> &#elements.at(1),
+    #if displaymode {
+      for i in range(2, elements.pos().len(), step: 2) { 
+        $#elements.at(i) & |-> & #elements.at(i + 1)$ 
+      }
+    } else { 
+      for i in range(2, elements.pos().len(), step: 2) { 
+        $#elements.at(i) & |-> & #elements.at(i + 1)$ 
+        } 
+      }
+  )
+  $
+  }
 }
 
 #let aufranc = {
@@ -62,7 +79,12 @@
   body
 }
 
-#let context-block(body, margin-top: 0em) = {
+#let ita(body) = {
+  set text(font: "New Computer Modern", style: "italic")
+  body
+}
+
+#let context-block(body, margin-top: 1em) = {
   let pad = 15pt;
   set list(marker: [#sym.ast.op])
   set text(font: "New Computer Modern Sans", style: "italic")
@@ -78,4 +100,12 @@
     #align(left, [#body])
     ]
   ]
+}
+
+#let casesn(..args, space: math.med, start: 1) = {
+  math.cases(
+    ..args.named(),
+    ..args.pos().enumerate(start: start).map(((i, elt)) => {
+      $elt & space space ita("("#i")")$
+    }))
 }
