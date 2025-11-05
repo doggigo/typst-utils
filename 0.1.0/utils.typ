@@ -51,8 +51,12 @@
 
 #let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
 #let operp = math.op($#image("perp.svg",width: .75em)$)
-#let bigosum = $plus.circle.big$
-#let osum = $plus.circle$
+#let bigosum = $plus.o.big$
+#let osum = $plus.o$
+#let Id = $"Id"$
+#let Cl = math.op($C l$)
+#let bigunion = math.op($union.big$, limits: true)
+#let biginter = math.op($inter.big$, limits: true)
 #let Sup = math.op($"Sup"$, limits: true)
 #let Inf = math.op($"Inf"$, limits: true)
 #let Max = math.op($"Max"$, limits: true)
@@ -62,6 +66,12 @@
 #let ch = math.op($"ch"$)
 #let sh = math.op($"sh"$)
 #let th = math.op($"th"$)
+#let Argch = math.op($"Argch"$)
+#let Argsh = math.op($"Argsh"$)
+#let Argth = math.op($"Argth"$)
+#let Arccos = math.op($"Arccos"$)
+#let Arcsin = math.op($"Arcsin"$)
+#let Arctan = math.op($"Arctan"$)
 #let Vect = math.op($"Vect"$)
 #let Ker = math.op($"Ker"$)
 #let fIm = math.op($"Im"$)
@@ -69,10 +79,17 @@
 #let Esp = math.op($sans(E)$)
 #let Var = math.op($sans(V)$)
 #let Card = math.op($"Card"$)
-#let bigosum = sym.plus.circle.big
+#let Sp = math.op($"Sp"$)
 #let scal(x,y) = $(#x thin mid(|) thin #y)$
+#let scal2(x,y) = $chevron.l #x,#y chevron.r$
 #let vdots = math.dots.v
 #let transp(x) = $attach(#x, tl: t)$
+#let Bf = $B_f$
+#let Bf2 = $overline(B)$
+#let Is = math.op($"Is"$)
+#let Tr = math.op($"Tr"$)
+#let Mat = math.op($"Mat"$)
+#let Lin = math.op($cal(L)$)
 
 #let serif(body) = {
   set text(font: "New Computer Modern", style: "normal")
