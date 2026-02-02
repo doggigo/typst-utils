@@ -90,7 +90,7 @@
 #let Tr = math.op($"Tr"$)
 #let Mat = math.op($"Mat"$)
 #let Lin = math.op($cal(L)$)
-
+#let mod(p) = $"  "[#p]$
 #let serif(body) = {
   set text(font: "New Computer Modern", style: "normal")
   body
