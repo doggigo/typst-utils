@@ -49,6 +49,9 @@
   airy-paragraph(body, leading: leading, spacing: spacing)
 }
 
+
+#let matdet(..args) = math.mat(delim: "|",..args)
+#let sgn = math.op($"sgn"$)
 #let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
 #let operp = math.op($#image("perp.svg",width: .75em)$)
 #let bigosum = $plus.o.big$
@@ -90,6 +93,12 @@
 #let Tr = math.op($"Tr"$)
 #let Mat = math.op($"Mat"$)
 #let Lin = math.op($cal(L)$)
+#let cst = $"cst"$
+#let isommorphic = $tilde.equiv$
+
+#let tuple(..args) = [
+  #sym.angle.l#args.pos().join(", ")#sym.angle.r
+  ]
 
 #let serif(body) = {
   set text(font: "New Computer Modern", style: "normal")
@@ -126,3 +135,58 @@
       $elt & space space ita("("#i")")$
     }))
 }
+
+#let aaa = $cal(a)$
+#let bbb = $cal(b)$
+#let ccc = $cal(c)$
+#let ddd = $cal(d)$
+#let eee = $cal(e)$
+#let fff = $cal(f)$
+#let ggg = $cal(g)$
+#let hhh = $cal(h)$
+#let iii = $cal(i)$
+#let jjj = $cal(j)$
+#let kkk = $cal(k)$
+#let lll = $cal(l)$
+#let mmm = $cal(m)$
+#let nnn = $cal(n)$
+#let ooo = $cal(o)$
+#let ppp = $cal(p)$
+#let qqq = $cal(q)$
+#let rrr = $cal(r)$
+#let sss = $cal(s)$
+#let ttt = $cal(t)$
+#let uuu = $cal(u)$
+#let vvv = $cal(v)$
+#let www = $cal(w)$
+#let xxx = $cal(x)$
+#let yyy = $cal(y)$
+#let zzz = $cal(z)$
+#let AAA = $cal(A)$
+#let BBB = $cal(B)$
+#let CCC = $cal(C)$
+#let DDD = $cal(D)$
+#let EEE = $cal(E)$
+#let FFF = $cal(F)$
+#let GGG = $cal(G)$
+#let HHH = $cal(H)$
+#let III = $cal(I)$
+#let JJJ = $cal(J)$
+#let KKK = $cal(K)$
+#let LLL = $cal(L)$
+#let MMM = $cal(M)$
+#let NNN = $cal(N)$
+#let OOO = $cal(O)$
+#let PPP = $cal(P)$
+#let QQQ = $cal(Q)$
+#let RRR = $cal(R)$
+#let SSS = $cal(S)$
+#let TTT = $cal(T)$
+#let UUU = $cal(U)$
+#let VVV = $cal(V)$
+#let WWW = $cal(W)$
+#let XXX = $cal(X)$
+#let YYY = $cal(Y)$
+#let ZZZ = $cal(Z)$
+
+#let bar(x) = $overline(#x)$
