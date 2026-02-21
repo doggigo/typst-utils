@@ -81,6 +81,7 @@
 #let Cov = math.op($"Cov"$)
 #let Esp = math.op($sans(E)$)
 #let Var = math.op($sans(V)$)
+#let Var2 = math.op($"Var"$)
 #let Card = math.op($"Card"$)
 #let Sp = math.op($"Sp"$)
 #let scal(x,y) = $(#x thin mid(|) thin #y)$
@@ -94,7 +95,8 @@
 #let Mat = math.op($"Mat"$)
 #let Lin = math.op($cal(L)$)
 #let mod(p) = $"  "[#p]$
-
+#let indep = $tack.t.double$
+#let cdot = $dot.c$
 #let cst = $"cst"$
 #let isommorphic = $tilde.equiv$
 
@@ -106,6 +108,8 @@
   set text(font: "New Computer Modern", style: "normal")
   body
 }
+
+#let triplenorm(x) = math.op($lr(bar.v.triple #x bar.v.triple)$)
 
 #let ita(body) = {
   set text(font: "New Computer Modern", style: "italic")
@@ -192,3 +196,5 @@
 #let ZZZ = $cal(Z)$
 
 #let bar(x) = $overline(#x)$
+
+#let given(A,B) = $#A mid(|) #B$
