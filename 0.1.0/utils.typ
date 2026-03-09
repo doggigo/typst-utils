@@ -99,7 +99,9 @@
 #let cdot = $dot.c$
 #let cst = $"cst"$
 #let isommorphic = $tilde.equiv$
-
+#let ddots = $dots.down$
+#let Re = math.op($"Re"$)
+#let Im = math.op($"Im"$)
 #let tuple(..args) = [
   #sym.angle.l#args.pos().join(", ")#sym.angle.r
   ]
