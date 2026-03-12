@@ -52,10 +52,11 @@
 
 #let matdet(..args) = math.mat(delim: "|",..args)
 #let sgn = math.op($"sgn"$)
-#let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
-#let operp = math.op($#image("perp.svg",width: .75em)$)
 #let bigosum = $plus.o.big$
 #let osum = $plus.o$
+#let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
+#let operp = math.op($#image("perp.svg",width: .75em)$)
+#let operp2 = $osum^perp$
 #let Id = $"Id"$
 #let Cl = math.op($C l$)
 #let bigunion = math.op($union.big$, limits: true)
