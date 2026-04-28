@@ -73,6 +73,7 @@
 #let boxed(..args) = markrect(padding:.2em,..args)
 
 #let car = $"car"$
+#let ord = $"ord"$
 #let Id = $"Id"$
 #let Rg = $"Rg"$
 #let Cl = math.op($C l$)
