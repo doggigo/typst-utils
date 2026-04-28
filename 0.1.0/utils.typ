@@ -1,3 +1,6 @@
+#import "@preview/physica:0.9.7": evaluated
+#import "@preview/mannot:0.2.2": markrect
+
 #let application(..elements, displaymode: false) = {
   if displaymode {
     $display(cases(
@@ -5,7 +8,8 @@
     #elements.at(0) &-> &#elements.at(1),
     #if displaymode {
       for i in range(2, elements.pos().len(), step: 2) { $(#elements.at(i) & |-> & #elements.at(i + 1))$ }
-    } else { for i in range(2, elements.pos().len(), step: 2) { $#elements.at(i) & |-> & #elements.at(i + 1)$ } }
+    } else { for i in range(2, elements.pos().len(), step: 2) { $#elements.at(i) & |-> & #elements.at(i + 1)$
+    } }
   ))$
   } else {
     $cases(
@@ -51,16 +55,32 @@
 
 
 #let matdet(..args) = math.mat(delim: "|",..args)
+#let det = math.op("det",limits:false)
 #let sgn = math.op($"sgn"$)
 #let bigosum = $plus.o.big$
 #let osum = $plus.o$
 #let bigoperp = math.op($#image("perp.svg",width: 1.4em)$,limits:true)
 #let operp = math.op($#image("perp.svg",width: .75em)$)
 #let operp2 = $osum^perp$
+
+#let ortho = $perp$
+#let oortho = $operp2$
+
+#let restr(f,E) = $evaluated(#f)_#E$
+
+#let nint(a,b) = $[|a,b|]$
+
+#let boxed(..args) = markrect(padding:.2em,..args)
+
+#let car = $"car"$
 #let Id = $"Id"$
+#let Rg = $"Rg"$
 #let Cl = math.op($C l$)
+#let biguniondisj = math.op($union.sq.big$, limits:true)
+#let uniondisj = $union.sq$
 #let bigunion = math.op($union.big$, limits: true)
 #let biginter = math.op($inter.big$, limits: true)
+#let limsup = math.op("limsup",limits: true)
 #let Sup = math.op($"Sup"$, limits: true)
 #let Inf = math.op($"Inf"$, limits: true)
 #let Max = math.op($"Max"$, limits: true)
@@ -81,6 +101,7 @@
 #let fIm = math.op($"Im"$)
 #let Cov = math.op($"Cov"$)
 #let Esp = math.op($sans(E)$)
+#let Esp2 = math.op($EE$)
 #let Var = math.op($sans(V)$)
 #let Var2 = math.op($"Var"$)
 #let Card = math.op($"Card"$)
@@ -89,6 +110,7 @@
 #let scal2(x,y) = $chevron.l #x,#y chevron.r$
 #let vdots = math.dots.v
 #let transp(x) = $attach(#x, tl: t)$
+#let lperp(x) = $attach(#x, tl: perp)$
 #let Bf = $B_f$
 #let Bf2 = $overline(B)$
 #let Is = math.op($"Is"$)
@@ -97,12 +119,23 @@
 #let Lin = math.op($cal(L)$)
 #let mod(p) = $"  "[#p]$
 #let indep = $tack.t.double$
+#let sur = $\/$
 #let cdot = $dot.c$
 #let cst = $"cst"$
 #let isommorphic = $tilde.equiv$
 #let ddots = $dots.down$
 #let Re = math.op($"Re"$)
 #let Im = math.op($"Im"$)
+#let iint = $integral.double$
+#let iiint = $integral.triple$
+#let iiiint = $integral.quad$
+#let oint = $integral.cont$
+#let oiint = $integral.surf$
+#let oiiint = $integral.vol$
+#let ni = $in.rev$
+
+#let GL = $G L$
+
 #let tuple(..args) = [
   #sym.angle.l#args.pos().join(", ")#sym.angle.r
   ]
@@ -197,6 +230,59 @@
 #let XXX = $cal(X)$
 #let YYY = $cal(Y)$
 #let ZZZ = $cal(Z)$
+
+#let aaaa = $scr(a)$
+#let bbbb = $scr(b)$
+#let cccc = $scr(c)$
+#let dddd = $scr(d)$
+#let eeee = $scr(e)$
+#let ffff = $scr(f)$
+#let gggg = $scr(g)$
+#let hhhh = $scr(h)$
+#let iiii = $scr(i)$
+#let jjjj = $scr(j)$
+#let kkkk = $scr(k)$
+#let llll = $scr(l)$
+#let mmmm = $scr(m)$
+#let nnnn = $scr(n)$
+#let oooo = $scr(o)$
+#let pppp = $scr(p)$
+#let qqqq = $scr(q)$
+#let rrrr = $scr(r)$
+#let ssss = $scr(s)$
+#let tttt = $scr(t)$
+#let uuuu = $scr(u)$
+#let vvvv = $scr(v)$
+#let wwww = $scr(w)$
+#let xxxx = $scr(x)$
+#let yyyy = $scr(y)$
+#let zzzz = $scr(z)$
+#let AAAA = $scr(A)$
+#let BBBB = $scr(B)$
+#let CCCC = $scr(C)$
+#let DDDD = $scr(D)$
+#let EEEE = $scr(E)$
+#let FFFF = $scr(F)$
+#let GGGG = $scr(G)$
+#let HHHH = $scr(H)$
+#let IIII = $scr(I)$
+#let JJJJ = $scr(J)$
+#let KKKK = $scr(K)$
+#let LLLL = $scr(L)$
+#let MMMM = $scr(M)$
+#let NNNN = $scr(N)$
+#let OOOO = $scr(O)$
+#let PPPP = $scr(P)$
+#let QQQQ = $scr(Q)$
+#let RRRR = $scr(R)$
+#let SSSS = $scr(S)$
+#let TTTT = $scr(T)$
+#let UUUU = $scr(U)$
+#let VVVV = $scr(V)$
+#let WWWW = $scr(W)$
+#let XXXX = $scr(X)$
+#let YYYY = $scr(Y)$
+#let ZZZZ = $scr(Z)$
 
 #let bar(x) = $overline(#x)$
 
