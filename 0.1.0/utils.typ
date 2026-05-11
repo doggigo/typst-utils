@@ -76,6 +76,7 @@
 #let ord = $"ord"$
 #let Id = $"Id"$
 #let Rg = $"Rg"$
+#let Comat = $"Comat"$
 #let Cl = math.op($C l$)
 #let biguniondisj = math.op($union.sq.big$, limits:true)
 #let uniondisj = $union.sq$
@@ -143,6 +144,11 @@
 
 #let serif(body) = {
   set text(font: "New Computer Modern", style: "normal")
+  body
+}
+
+#let sans(body) = {
+  set text(font: "New Computer Modern Sans", style: "normal")
   body
 }
 
