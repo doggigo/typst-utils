@@ -68,7 +68,7 @@
 
 #let restr(f,E) = $evaluated(#f)_#E$
 
-#let nint(a,b) = $[|a,b|]$
+#let nint(a,b) = $[|#a,#b|]$
 
 #let boxed(..args) = markrect(padding:.2em,..args)
 
@@ -135,6 +135,8 @@
 #let oiint = $integral.surf$
 #let oiiint = $integral.vol$
 #let ni = $in.rev$
+
+#let diag = "diag"
 
 #let GL = $G L$
 
