@@ -187,6 +187,23 @@
     }))
 }
 
+#let setup_maths(body) = {
+  show math.attach: it => {
+    if it.has("t") and it.t == $O$.body {
+      if it.base.func() != math.lr {
+        math.accent(it.base, "˚")
+      } else {
+        $overbrace(#it.base)^O$
+      }
+    } else if it.has("t") and it.t == $F$.body {
+      math.overline(it.base)
+    } else {
+      it
+    }
+  }
+  body
+}
+
 #let aaa = $cal(a)$
 #let bbb = $cal(b)$
 #let ccc = $cal(c)$
