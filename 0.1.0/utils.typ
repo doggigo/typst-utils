@@ -120,7 +120,7 @@
 #let Mat = math.op($"Mat"$)
 #let Lin = math.op($cal(L)$)
 #let mod(p) = $"  "[#p]$
-#let indep = $tack.t.double$
+#let indep = $tack.tt$
 #let sur = $\/$
 #let cdot = $dot.c$
 #let cst = $"cst"$
