@@ -142,6 +142,11 @@
 
 #let GL = $G L$
 
+#let Frac = "Frac"
+#let Stab = "Stab"
+#let st = "st"
+#let distingue = sym.triangle.l
+
 #let tuple(..args) = [
   #sym.angle.l#args.pos().join(", ")#sym.angle.r
   ]
@@ -199,6 +204,8 @@
       }
     } else if it.has("t") and it.t == $F$.body {
       math.overline(it.base)
+    } else if it.has("t") and it.t == $tilde$.body{
+      math.tilde(it.base)
     } else {
       it
     }
