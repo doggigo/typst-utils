@@ -376,3 +376,4 @@
 #let bar(x) = $overline(#x)$
 
 #let given(A,B) = $#A mid(|) #B$
+
