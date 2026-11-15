@@ -139,6 +139,8 @@
 #let oiiint = $integral.vol$
 #let ni = $in.rev$
 
+#let indic = $bb(1)$
+
 #let diag = "diag"
 
 #let GL = $G L$
