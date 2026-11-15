@@ -138,6 +138,7 @@
 #let oiint = $integral.surf$
 #let oiiint = $integral.vol$
 #let ni = $in.rev$
+#let grows = $arrow.t$
 
 #let diag = "diag"
 
