@@ -140,6 +140,8 @@
 #let ni = $in.rev$
 #let grows = $arrow.t$
 
+#let indic = $bb(1)$
+
 #let diag = "diag"
 
 #let GL = $G L$
@@ -377,3 +379,4 @@
 #let bar(x) = $overline(#x)$
 
 #let given(A,B) = $#A mid(|) #B$
+
